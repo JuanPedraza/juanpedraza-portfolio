@@ -18,8 +18,16 @@
     <!-- Hero Section -->
     <section class="hero is-fullheight gradient-bg">
         <div class="hero-body">
-            <div class="container has-text-centered">
+            <div class="container">
                 <div class="columns is-vcentered is-centered">
+                    <!-- Imagen de perfil -->
+                    <div class="column is-4 has-text-centered animate-pop">
+                        <div class="profile-image-wrapper">
+                            <!-- Asegúrate de que el nombre del archivo coincida con tu imagen -->
+                            <img src="perfil.jpg" alt="Juan Pedraza" class="profile-image">
+                        </div>
+                    </div>
+                    <!-- Texto del hero -->
                     <div class="column is-8">
                         <h1 class="title is-1 has-text-white is-size-2-mobile animate-pop">
                             Juan Pedraza
@@ -30,7 +38,7 @@
                         <p class="is-size-5 has-text-white is-size-6-mobile animate-pop delay-2 mb-6">
                             Más de 5 años optimizando infraestructura, resolviendo incidentes críticos y automatizando procesos con Python y AWS.
                         </p>
-                        <div class="buttons is-centered animate-pop delay-3">
+                        <div class="buttons animate-pop delay-3">
                             <a href="#contacto" class="button is-large custom-btn-primary">
                                 <span class="icon"><i class="fas fa-envelope"></i></span>
                                 <span>Contactar</span>
@@ -135,59 +143,63 @@
         </div>
     </section>
 
-    <!-- Experiencia Profesional -->
+    <!-- Experiencia Profesional (Solo Empresas) -->
     <section class="section section-light" id="experiencia">
         <div class="container">
             <h2 class="title is-2 custom-title has-text-centered mb-6">Experiencia Profesional</h2>
-            <div class="timeline">
+            <div class="columns is-multiline is-centered">
                 <!-- Konecta -->
-                <div class="timeline-item">
-                    <div class="timeline-marker is-primary"></div>
-                    <div class="timeline-content">
-                        <div class="card custom-card-exp">
-                            <div class="card-content">
-                                <h3 class="title is-4 custom-card-title">KONECTA | Bogotá, D.C.</h3>
-                                <h4 class="subtitle is-6 custom-subtitle">Analista de soporte TI avanzado (Junio 2024 – Actualidad)</h4>
-                                <ul class="custom-list">
-                                    <li>Gestión integral de incidentes complejos bajo estrictos indicadores de SLA.</li>
-                                    <li>Administración de Directorio Activo, redes VPN y soporte a la infraestructura tecnológica.</li>
-                                    <li>Identificación de patrones de fallas, documentación de procedimientos y generación de reportes.</li>
-                                </ul>
-                                <h4 class="subtitle is-6 custom-subtitle mt-3">Operador de soporte TI (Agosto 2023 – Junio 2024)</h4>
-                                <ul class="custom-list">
-                                    <li>Ejecución de soporte técnico L1/L2, priorizando incidentes según impacto.</li>
-                                </ul>
-                            </div>
+                <div class="column is-4-desktop is-6-tablet">
+                    <div class="company-card">
+                        <div class="company-card-inner">
+                            <span class="icon is-large company-icon">
+                                <i class="fas fa-building fa-3x"></i>
+                            </span>
+                            <h3 class="title is-5 company-name">Konecta</h3>
                         </div>
                     </div>
                 </div>
                 <!-- Nexa BPO -->
-                <div class="timeline-item">
-                    <div class="timeline-marker is-primary"></div>
-                    <div class="timeline-content">
-                        <div class="card custom-card-exp">
-                            <div class="card-content">
-                                <h3 class="title is-4 custom-card-title">NEXA BPO | Bogotá, D.C.</h3>
-                                <h4 class="subtitle is-6 custom-subtitle">Ejecutivo de soporte TI (Noviembre 2022 – Junio 2023)</h4>
-                                <ul class="custom-list">
-                                    <li>Asesoramiento técnico a clientes empresariales, gestionando requerimientos y asegurando la satisfacción bajo métricas de calidad y tiempos.</li>
-                                </ul>
-                            </div>
+                <div class="column is-4-desktop is-6-tablet">
+                    <div class="company-card">
+                        <div class="company-card-inner">
+                            <span class="icon is-large company-icon">
+                                <i class="fas fa-headset fa-3x"></i>
+                            </span>
+                            <h3 class="title is-5 company-name">Nexa BPO</h3>
                         </div>
                     </div>
                 </div>
                 <!-- Goteam SAS -->
-                <div class="timeline-item">
-                    <div class="timeline-marker is-primary"></div>
-                    <div class="timeline-content">
-                        <div class="card custom-card-exp">
-                            <div class="card-content">
-                                <h3 class="title is-4 custom-card-title">#GOTEAM SAS | Bogotá, D.C.</h3>
-                                <h4 class="subtitle is-6 custom-subtitle">Consultor de soluciones tecnológicas (Julio 2019 – Abril 2022)</h4>
-                                <ul class="custom-list">
-                                    <li>Mantenimiento, configuración y soporte preventivo/correctivo a redes e infraestructura tecnológica de clientes.</li>
-                                </ul>
-                            </div>
+                <div class="column is-4-desktop is-6-tablet">
+                    <div class="company-card">
+                        <div class="company-card-inner">
+                            <span class="icon is-large company-icon">
+                                <i class="fas fa-users fa-3x"></i>
+                            </span>
+                            <h3 class="title is-5 company-name">#GOTEAM SAS</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Platinum Contact Center -->
+                <div class="column is-4-desktop is-6-tablet">
+                    <div class="company-card">
+                        <div class="company-card-inner">
+                            <span class="icon is-large company-icon">
+                                <i class="fas fa-phone-alt fa-3x"></i>
+                            </span>
+                            <h3 class="title is-5 company-name">Platinum Contact Center</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Azteca Comunicaciones -->
+                <div class="column is-4-desktop is-6-tablet">
+                    <div class="company-card">
+                        <div class="company-card-inner">
+                            <span class="icon is-large company-icon">
+                                <i class="fas fa-broadcast-tower fa-3x"></i>
+                            </span>
+                            <h3 class="title is-5 company-name">Azteca Comunicaciones</h3>
                         </div>
                     </div>
                 </div>
@@ -232,23 +244,15 @@
     <footer class="footer section-dark" id="contacto">
         <div class="container has-text-centered">
             <h2 class="title is-3 has-text-white mb-5">¿Hablamos?</h2>
-            <p class="is-size-5 has-text-white mb-6">Estoy disponible para nuevos desafíos y oportunidades.</p>
-            <div class="buttons is-centered">
-                <a href="mailto:juan_pedraza@outlook.com" class="button is-large custom-btn-primary">
-                    <span class="icon"><i class="fas fa-envelope"></i></span>
-                    <span>pendiente</span>
-                </a>
-                <a href="tel:+573022641488" class="button is-large custom-btn-secondary">
-                    <span class="icon"><i class="fas fa-phone"></i></span>
-                    <span>Pendiente</span>
-                </a>
-            </div>
+            <p class="is-size-5 has-text-white mb-6">Conéctate conmigo a través de mis redes profesionales.</p>
+            
+            <!-- Solo iconos de LinkedIn y GitHub -->
             <div class="social-links mt-6">
-                <a href="https://www.linkedin.com/in/juan-pedraza" target="_blank" class="social-icon">
-                    <span class="icon is-large"><i class="fab fa-linkedin fa-2x"></i></span>
+                <a href="https://www.linkedin.com/in/juan-pedraza" target="_blank" class="social-icon" title="LinkedIn">
+                    <span class="icon is-large"><i class="fab fa-linkedin fa-4x"></i></span>
                 </a>
-                <a href="https://github.com/juanpedraza" target="_blank" class="social-icon">
-                    <span class="icon is-large"><i class="fab fa-github fa-2x"></i></span>
+                <a href="https://github.com/juanpedraza" target="_blank" class="social-icon" title="GitHub">
+                    <span class="icon is-large"><i class="fab fa-github fa-4x"></i></span>
                 </a>
             </div>
         </div>
