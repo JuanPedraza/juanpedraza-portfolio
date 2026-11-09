@@ -5,7 +5,7 @@
     --color-coral: #FF5B42;
     --color-yellow: #FFD749;
     --color-white: #ffffff;
-    --color-light-bg: #f8f5fa; /* Un tono muy claro derivado del púrpura */
+    --color-light-bg: #f8f5fa;
 }
 
 /* Estilos Generales */
@@ -20,6 +20,29 @@ body {
     background: linear-gradient(135deg, var(--color-dark-purple) 0%, var(--color-magenta) 100%);
     position: relative;
     overflow: hidden;
+}
+
+/* Imagen de Perfil */
+.profile-image-wrapper {
+    display: inline-block;
+    padding: 8px;
+    background: linear-gradient(135deg, var(--color-coral), var(--color-yellow));
+    border-radius: 50%;
+    box-shadow: 0 10px 40px rgba(255, 91, 66, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.profile-image-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.profile-image {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--color-dark-purple);
+    display: block;
 }
 
 /* Animaciones */
@@ -158,86 +181,70 @@ body {
     font-size: 0.95rem;
 }
 
-/* Timeline de Experiencia */
-.timeline {
+/* ===== Tarjetas de Experiencia (Solo Empresas) ===== */
+.company-card {
     position: relative;
-    padding-left: 2rem;
+    background: linear-gradient(135deg, var(--color-dark-purple) 0%, var(--color-magenta) 100%);
+    border-radius: 16px;
+    padding: 3px;
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: default;
 }
 
-.timeline::before {
+.company-card::before {
     content: '';
     position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(to bottom, var(--color-coral), var(--color-yellow));
-    border-radius: 2px;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, var(--color-coral), var(--color-yellow), transparent);
+    animation: rotateBorder 4s linear infinite;
+    opacity: 0;
+    transition: opacity 0.35s ease;
 }
 
-.timeline-item {
+.company-card:hover::before {
+    opacity: 1;
+}
+
+@keyframes rotateBorder {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.company-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(66, 20, 84, 0.35);
+}
+
+.company-card-inner {
     position: relative;
-    margin-bottom: 2rem;
-}
-
-.timeline-marker {
-    position: absolute;
-    left: -2rem;
-    top: 1.5rem;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: var(--color-coral);
-    border: 3px solid var(--color-white);
-    box-shadow: 0 0 0 3px var(--color-coral);
-    transform: translateX(-50%);
-    z-index: 1;
-}
-
-.timeline-content {
-    margin-left: 1rem;
-}
-
-.custom-card-exp {
     background-color: var(--color-white);
-    border-left: 5px solid var(--color-magenta);
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 14px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    z-index: 1;
+    height: 100%;
 }
 
-.custom-card-exp:hover {
-    transform: translateX(5px);
-    box-shadow: 0 10px 25px rgba(128, 44, 98, 0.15);
+.company-icon {
+    color: var(--color-magenta);
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
 }
 
-.custom-card-exp .custom-card-title {
-    color: var(--color-dark-purple) !important;
-}
-
-.custom-subtitle {
-    color: var(--color-magenta) !important;
-    font-weight: 600;
-    margin-top: 0.5rem;
-}
-
-.custom-list {
-    list-style: none;
-    padding-left: 0;
-}
-
-.custom-list li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #4a4a4a;
-}
-
-.custom-list li::before {
-    content: '▹';
-    position: absolute;
-    left: 0;
+.company-card:hover .company-icon {
+    transform: scale(1.15) rotate(-5deg);
     color: var(--color-coral);
-    font-weight: bold;
+}
+
+.company-name {
+    color: var(--color-dark-purple) !important;
+    font-weight: 700 !important;
+    margin-top: 1rem;
+    letter-spacing: 0.5px;
 }
 
 /* Tarjetas de Educación */
@@ -269,17 +276,19 @@ body {
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 3rem; /* Más espacio entre iconos */
 }
 
 .social-icon {
     color: var(--color-yellow);
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .social-icon:hover {
     color: var(--color-coral);
-    transform: scale(1.2);
+    transform: scale(1.2) translateY(-5px);
+    filter: drop-shadow(0 10px 15px rgba(255, 91, 66, 0.4));
 }
 
 /* Pie de página con crédito */
@@ -303,16 +312,12 @@ body {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .timeline {
-        padding-left: 1rem;
+    .profile-image {
+        width: 180px;
+        height: 180px;
     }
-    .timeline-marker {
-        left: -1rem;
-        width: 16px;
-        height: 16px;
-    }
-    .timeline-content {
-        margin-left: 0.5rem;
+    .company-card-inner {
+        padding: 2rem 1rem;
     }
     .custom-title {
         font-size: 1.8rem;
@@ -320,5 +325,8 @@ body {
     .buttons .button {
         width: 100%;
         margin-bottom: 0.5rem;
+    }
+    .social-links {
+        gap: 2rem;
     }
 }
