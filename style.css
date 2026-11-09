@@ -1,0 +1,324 @@
+/* Paleta de Colores */
+:root {
+    --color-dark-purple: #421454;
+    --color-magenta: #802C62;
+    --color-coral: #FF5B42;
+    --color-yellow: #FFD749;
+    --color-white: #ffffff;
+    --color-light-bg: #f8f5fa; /* Un tono muy claro derivado del púrpura */
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Gradiente de Fondo para Hero */
+.gradient-bg {
+    background: linear-gradient(135deg, var(--color-dark-purple) 0%, var(--color-magenta) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-pop {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+
+/* Indicador de Scroll */
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-20px); }
+    60% { transform: translateX(-50%) translateY(-10px); }
+}
+
+/* Botones Personalizados */
+.custom-btn-primary {
+    background-color: var(--color-coral);
+    color: var(--color-white);
+    border: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 91, 66, 0.4);
+}
+
+.custom-btn-primary:hover {
+    background-color: #e04a33;
+    color: var(--color-white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 91, 66, 0.6);
+}
+
+.custom-btn-secondary {
+    background-color: transparent;
+    color: var(--color-yellow);
+    border: 2px solid var(--color-yellow);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.custom-btn-secondary:hover {
+    background-color: var(--color-yellow);
+    color: var(--color-dark-purple);
+    transform: translateY(-3px);
+}
+
+/* Secciones */
+.section-light {
+    background-color: var(--color-light-bg);
+}
+
+.section-dark {
+    background-color: var(--color-dark-purple);
+}
+
+.custom-title {
+    color: var(--color-dark-purple);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.custom-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-coral);
+    border-radius: 2px;
+}
+
+/* Iconos */
+.profile-icon-wrapper {
+    display: inline-block;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--color-dark-purple), var(--color-magenta));
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(66, 20, 84, 0.2);
+}
+
+.custom-icon {
+    color: var(--color-yellow);
+}
+
+/* Tarjetas de Habilidades */
+.custom-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.custom-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--color-coral);
+}
+
+.custom-icon-card {
+    color: var(--color-yellow);
+}
+
+.custom-card-title {
+    color: var(--color-white) !important;
+}
+
+.custom-card-text {
+    color: #e0d4e8;
+    font-size: 0.95rem;
+}
+
+/* Timeline de Experiencia */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--color-coral), var(--color-yellow));
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -2rem;
+    top: 1.5rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--color-coral);
+    border: 3px solid var(--color-white);
+    box-shadow: 0 0 0 3px var(--color-coral);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline-content {
+    margin-left: 1rem;
+}
+
+.custom-card-exp {
+    background-color: var(--color-white);
+    border-left: 5px solid var(--color-magenta);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card-exp:hover {
+    transform: translateX(5px);
+    box-shadow: 0 10px 25px rgba(128, 44, 98, 0.15);
+}
+
+.custom-card-exp .custom-card-title {
+    color: var(--color-dark-purple) !important;
+}
+
+.custom-subtitle {
+    color: var(--color-magenta) !important;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.custom-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.custom-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #4a4a4a;
+}
+
+.custom-list li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--color-coral);
+    font-weight: bold;
+}
+
+/* Tarjetas de Educación */
+.custom-card-edu {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    height: 100%;
+}
+
+.custom-list-cert {
+    list-style: none;
+    padding-left: 0;
+}
+
+.custom-list-cert li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #e0d4e8;
+}
+
+.custom-icon-cert {
+    color: var(--color-yellow);
+    margin-right: 0.75rem;
+}
+
+/* Footer y Redes Sociales */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-icon {
+    color: var(--color-yellow);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--color-coral);
+    transform: scale(1.2);
+}
+
+/* Pie de página con crédito */
+.footer-credit {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 215, 73, 0.25);
+}
+
+.credit-name {
+    color: var(--color-yellow);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.credit-name::after {
+    content: '▹';
+    margin-left: 0.4rem;
+    color: var(--color-coral);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 1rem;
+    }
+    .timeline-marker {
+        left: -1rem;
+        width: 16px;
+        height: 16px;
+    }
+    .timeline-content {
+        margin-left: 0.5rem;
+    }
+    .custom-title {
+        font-size: 1.8rem;
+    }
+    .buttons .button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
